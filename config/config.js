@@ -26,6 +26,10 @@ export default {
         component: './Puzzlecards'
       },
       {
+        path: '/list',
+        component: './list'
+      },
+      {
         path: '/dashboard',
         routes: [
           { path: '/dashboard/analysis', component: 'Dashboard/Analysis' },
@@ -35,5 +39,10 @@ export default {
       },
     ]
   }],
-  
+  proxy: {
+    '/test': {
+      target: 'http://114.116.89.193:8999',
+      changeOrigin: true,
+    },
+  },
 };
